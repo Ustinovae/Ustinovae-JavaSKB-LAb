@@ -16,18 +16,6 @@ import org.springframework.web.bind.annotation.*;
 public class ShopController {
     private ShopManager shopManager;
 
-//    private final BuyService buyService;
-//
-//    @GetMapping("/deposit-money")
-//    public ResponseEntity depositMoney(@RequestParam int money){
-//        try {
-//            buyService.depositMoney(money);
-//            return ResponseEntity.ok("Деньги внесены на депозит");
-//        }catch (Exception e){
-//            return ResponseEntity.badRequest().body("Error");
-//        }
-//    }
-
     @GetMapping("/headers")
     public ResponseEntity getHeaders(@RequestHeader HttpHeaders headers){
         try {

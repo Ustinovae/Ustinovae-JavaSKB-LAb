@@ -5,13 +5,11 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import org.bson.types.ObjectId;
 import org.bson.Document;
-import org.springframework.http.ResponseEntity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class RepositoryImpl implements Repository{
+public class RepositoryImpl implements Repository {
     private MongoDatabase db;
 
     public void connectDB(String host, int port, String dbName) {
@@ -20,11 +18,11 @@ public class RepositoryImpl implements Repository{
         db = client.getDatabase(dbName);
     }
 
-    public boolean isConnectionDB(){
+    public boolean isConnectionDB() {
         return db == null;
     }
 
-    public void saveNotepadCases(NotepadCases notepadCases){
+    public void saveNotepadCases(NotepadCases notepadCases) {
         var collection = db.getCollection("notepadeCases");
 
         var document = new Document("_id", new ObjectId());
@@ -35,15 +33,15 @@ public class RepositoryImpl implements Repository{
     }
 
     public NotepadCases[] getCollection() throws Exception {
-            var collection = db.getCollection("notepadeCases");
-            var result = new ArrayList<NotepadCases>();
-            for (var document : collection.find()) {
-                var notepadCases = deserializeNotepadCase(document);
-                if (notepadCases == null)
-                    continue;
-                result.add(deserializeNotepadCase(document));
-            }
-            return result.toArray(new NotepadCases[result.size()]);
+        var collection = db.getCollection("notepadeCases");
+        var result = new ArrayList<NotepadCases>();
+        for (var document : collection.find()) {
+            var notepadCases = deserializeNotepadCase(document);
+            if (notepadCases == null)
+                continue;
+            result.add(deserializeNotepadCase(document));
+        }
+        return result.toArray(new NotepadCases[result.size()]);
     }
 
     private NotepadCases deserializeNotepadCase(Document document) throws Exception {
@@ -51,7 +49,7 @@ public class RepositoryImpl implements Repository{
 
         var name = document.get("name").toString();
         var events = new ArrayList<String>();
-        for (var event:document.getList("events", Object.class)) {
+        for (var event : document.getList("events", Object.class)) {
             events.add(event.toString());
         }
         return new NotepadCases(name, events.toArray(new String[events.size()]));
