@@ -1,4 +1,4 @@
-package DomainCore.Engine;
+package URFU.EducationProject.TransportService.DomainCore.Engine;
 
 
 import org.springframework.stereotype.Component;

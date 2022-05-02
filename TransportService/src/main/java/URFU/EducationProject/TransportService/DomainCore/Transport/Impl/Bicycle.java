@@ -4,7 +4,7 @@ import URFU.EducationProject.TransportService.DomainCore.Transport.Transport;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import URFU.EducationProject.TransportService.Configuration.*;
+import URFU.EducationProject.TransportService.Configuration.BicycleConfiguration;
 
 @Slf4j
 @Component

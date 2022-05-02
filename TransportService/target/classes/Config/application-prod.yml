@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: "MyApp"
+
+car:
+  name: BMW
+  engineModes: Eco, Sport, Balance, Sport+, Corso
+
+
+hybridCar:
+  name: Tayota
+  engineModes: Eco, Balanc, Corso
+
+
+horse:
+  name: ${MY_VALUE:default}
