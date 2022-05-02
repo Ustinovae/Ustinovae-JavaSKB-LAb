@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: "MyAppDev"
+
+car:
+  name: Top
+  engineModes: Eco, Sport
+
+
+hybridCar:
+  name: Code
+  engineModes: Eco, Balanc, Corso
+
+horse:
+  name: ${MY_VALUE:default}

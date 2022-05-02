@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: "MyAppTest"
+
+bicycle:
+  name: Kama
+
+car:
+  name: LadaTest
+  engineModes: Eco, Eco+
+
+hybridCar:
+  name: Honda
+  engineModes: Eco, Sport, Sport+, Corso
+
+horse:
+  name: ${MY_VALUE:default}
