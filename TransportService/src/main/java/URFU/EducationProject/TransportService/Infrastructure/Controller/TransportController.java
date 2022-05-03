@@ -53,7 +53,7 @@ public class TransportController {
         }
     }
 
-    @PutMapping(value = "/error-message", consumes = "application/json", produces = "application/json")
+    @PutMapping("/error-message")
     public ResponseEntity errorLoad(@RequestBody ErrorEventDto request){
         try {
             transportService.createError(request.getErrorType(), request.getDescription());

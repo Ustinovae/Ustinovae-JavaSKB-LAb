@@ -13,6 +13,6 @@ public class ErrorHandler{
     @EventListener
     @Async
     public void onApplicationEvent(ErrorIndicatorEvent event) {
-        log.info("Тип ошибки: %s\nОписание: %s".format(event.getErrorType(), event.getDescription()));
+        log.info(String.format("Тип ошибки: %s    Описание: %s", event.getErrorType(), event.getDescription()));
     }
 }
