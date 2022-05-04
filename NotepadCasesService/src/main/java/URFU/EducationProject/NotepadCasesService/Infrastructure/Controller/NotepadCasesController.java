@@ -3,6 +3,7 @@ package URFU.EducationProject.NotepadCasesService.Infrastructure.Controller;
 
 import URFU.EducationProject.NotepadCasesService.Contracts.NotepadCasesDto;
 import URFU.EducationProject.NotepadCasesService.DomainCore.NotepadCases;
+import URFU.EducationProject.NotepadCasesService.Infrastructure.Services.NotepadCasesManager;
 import URFU.EducationProject.NotepadCasesService.Infrastructure.Services.NotepadCasesManagerImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ import javax.validation.Valid;
 @AllArgsConstructor
 @Validated
 public class NotepadCasesController {
-    private NotepadCasesManagerImpl notepadCasesManager;
+    private NotepadCasesManager notepadCasesManager;
 
     @PostMapping("/save-notepad-cases")
     public ResponseEntity saveNotepadCases(@Valid @RequestBody NotepadCasesDto requestDto){

@@ -1,7 +1,6 @@
 package URFU.EducationProject.NotepadCasesService.DomainCore;
 
 import URFU.EducationProject.NotepadCasesService.Infrastructure.Exception.ValueEmptyException;
-import org.springframework.stereotype.Component;
 
 public class NotepadCases {
     private String name;

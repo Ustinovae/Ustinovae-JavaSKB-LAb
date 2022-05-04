@@ -5,11 +5,14 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import org.bson.types.ObjectId;
 import org.bson.Document;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class RepositoryImpl implements Repository {
+
+@Repository
+public class RepositoryImpl implements RepositoryBase {
     private MongoDatabase db;
 
     public void connectDB(String host, int port, String dbName) {

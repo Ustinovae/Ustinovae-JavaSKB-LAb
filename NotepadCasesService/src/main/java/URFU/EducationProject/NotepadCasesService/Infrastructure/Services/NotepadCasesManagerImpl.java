@@ -1,17 +1,15 @@
 package URFU.EducationProject.NotepadCasesService.Infrastructure.Services;
 
-import URFU.EducationProject.NotepadCasesService.DataAccess.RepositoryImpl;
+import URFU.EducationProject.NotepadCasesService.DataAccess.RepositoryBase;
 import URFU.EducationProject.NotepadCasesService.DomainCore.NotepadCases;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class NotepadCasesManagerImpl implements NotepadCasesManager {
-    private RepositoryImpl repository;
 
-    public NotepadCasesManagerImpl(){
-        repository = new RepositoryImpl();
-    }
+    @Autowired
+    private RepositoryBase repository;
 
     @Override
     public void saveNotepadCases(NotepadCases notepadCases) {
