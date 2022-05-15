@@ -3,7 +3,7 @@ spring:
     name: "MyAppTest"
 
 bicycle:
-  name: Kama
+  name: "Kama"
 
 car:
   name: LadaTest
