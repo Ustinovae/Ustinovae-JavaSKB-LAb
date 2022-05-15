@@ -5,12 +5,14 @@ import URFU.EducationProject.TransportService.Configuration.HybridCarConfigurati
 import URFU.EducationProject.TransportService.DomainCore.Engine.Engine;
 import URFU.EducationProject.TransportService.DomainCore.Transport.Transport;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class HybridСar implements Transport {
+public class HybridСar implements Transport, InitializingBean, DisposableBean {
 
     private Engine electric;
     private Engine internalCombustion;
@@ -41,5 +43,19 @@ public class HybridСar implements Transport {
         for (var engineMode : configuration.getEngineModes()) {
             log.info(engineMode);
         }
+    }
+
+    public String getName(){
+        return configuration.getName();
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        log.info("init " + getName());
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        log.info("dispose " + getName());
     }
 }
