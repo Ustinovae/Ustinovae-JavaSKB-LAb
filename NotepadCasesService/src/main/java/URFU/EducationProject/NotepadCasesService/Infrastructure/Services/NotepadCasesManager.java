@@ -2,7 +2,9 @@ package URFU.EducationProject.NotepadCasesService.Infrastructure.Services;
 
 import URFU.EducationProject.NotepadCasesService.DomainCore.NotepadCases;
 
+import java.util.List;
+
 public interface NotepadCasesManager {
     void saveNotepadCases(NotepadCases notepadCases);
-    NotepadCases[] getNotepadsCases() throws Exception;
+    List<NotepadCases> getNotepadsCases() throws Exception;
 }
