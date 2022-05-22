@@ -1,0 +1,31 @@
+{
+  "groups": [
+    {
+      "name": "execution-count-aspect",
+      "type": "URFU.EducationProject.ShoppingService.Infrastructure.Aspect.ExecutionCountAspect",
+      "sourceType": "URFU.EducationProject.ShoppingService.Infrastructure.Aspect.ExecutionCountAspect"
+    },
+    {
+      "name": "management.endpoint.time-now",
+      "type": "URFU.EducationProject.ShoppingService.Infrastructure.Actuator.TimeNowActuator",
+      "sourceType": "URFU.EducationProject.ShoppingService.Infrastructure.Actuator.TimeNowActuator"
+    }
+  ],
+  "properties": [
+    {
+      "name": "management.endpoint.time-now.cache.time-to-live",
+      "type": "java.time.Duration",
+      "description": "Maximum time that a response can be cached.",
+      "sourceType": "URFU.EducationProject.ShoppingService.Infrastructure.Actuator.TimeNowActuator",
+      "defaultValue": "0ms"
+    },
+    {
+      "name": "management.endpoint.time-now.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Whether to enable the time-now endpoint.",
+      "sourceType": "URFU.EducationProject.ShoppingService.Infrastructure.Actuator.TimeNowActuator",
+      "defaultValue": true
+    }
+  ],
+  "hints": []
+}
