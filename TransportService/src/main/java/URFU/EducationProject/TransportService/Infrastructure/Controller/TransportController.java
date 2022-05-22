@@ -1,6 +1,7 @@
 package URFU.EducationProject.TransportService.Infrastructure.Controller;
 
-import URFU.EducationProject.TransportService.Contracts.*;
+import URFU.EducationProject.TransportService.Contracts.ErrorEventDto;
+import URFU.EducationProject.TransportService.Contracts.UpgradeEventDto;
 import URFU.EducationProject.TransportService.Infrastructure.Services.TransportService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -70,6 +71,17 @@ public class TransportController {
             return ResponseEntity.ok("Error received");
         }catch (Exception e){
             return ResponseEntity.badRequest().body("Error");
+        }
+    }
+
+    @GetMapping("/transaction")
+    public ResponseEntity loadTransaction(){
+        try {
+            transportService.firstTransaction();
+            transportService.secondTransaction();
+            return ResponseEntity.ok("ok");
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 }

@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan
 @EnableAsync
 @EnableTransactionManagement
+
 public class Application {
 
     public static void main(String[] args) {

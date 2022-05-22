@@ -1,6 +1,7 @@
 package URFU.EducationProject.TransportService.Infrastructure.Services;
 
 import URFU.EducationProject.TransportService.DomainCore.Transport.Impl.*;
+import URFU.EducationProject.TransportService.Infrastructure.EventHandling.Publisher.TransactionEventsPublisher;
 import URFU.EducationProject.TransportService.Infrastructure.EventHandling.Publisher.TransportInfoEventsPublisher;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +22,8 @@ public class TransportService {
     private Bicycle bicycle;
 
     private final TransportInfoEventsPublisher publisher;
+    private final TransactionEventsPublisher transactionEventsPublisher;
+
 
     public void startTransport() {
         if (car != null) car.start();
@@ -55,5 +58,13 @@ public class TransportService {
 
     public void upgradeLoad(String message){
         publisher.publishUpgradeEvent(message);
+    }
+
+    public void firstTransaction(){
+        transactionEventsPublisher.publisherFirstTransactionEvent();
+    }
+
+    public void secondTransaction(){
+        transactionEventsPublisher.publisherSecondTransactionEvent();
     }
 }

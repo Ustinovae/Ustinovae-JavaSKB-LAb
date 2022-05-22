@@ -1,0 +1,57 @@
+{
+  "groups": [
+    {
+      "name": "bicycle",
+      "type": "URFU.EducationProject.TransportService.Configuration.BicycleConfiguration",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.BicycleConfiguration"
+    },
+    {
+      "name": "car",
+      "type": "URFU.EducationProject.TransportService.Configuration.CarConfiguration",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.CarConfiguration"
+    },
+    {
+      "name": "horse",
+      "type": "URFU.EducationProject.TransportService.Configuration.HorseConfiguration",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.HorseConfiguration"
+    },
+    {
+      "name": "hybrid-car",
+      "type": "URFU.EducationProject.TransportService.Configuration.HybridCarConfiguration",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.HybridCarConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "name": "bicycle.name",
+      "type": "java.lang.String",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.BicycleConfiguration"
+    },
+    {
+      "name": "car.engine-modes",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.CarConfiguration"
+    },
+    {
+      "name": "car.name",
+      "type": "java.lang.String",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.CarConfiguration"
+    },
+    {
+      "name": "horse.name",
+      "type": "java.lang.String",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.HorseConfiguration"
+    },
+    {
+      "name": "hybrid-car.engine-modes",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.HybridCarConfiguration"
+    },
+    {
+      "name": "hybrid-car.name",
+      "type": "java.lang.String",
+      "sourceType": "URFU.EducationProject.TransportService.Configuration.HybridCarConfiguration"
+    }
+  ],
+  "hints": []
+}
